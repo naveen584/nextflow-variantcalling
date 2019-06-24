@@ -2,29 +2,22 @@ curl -fsSL get.nextflow.io | bash
 
 ./nextflow run -profile docker main.nf --threads 10 --genome GENOME_FILE.fa --reads1 READS1_FILE.fq --reads2 READS2_FILE.fq --outdir OUTPUT_DIR
 
-it is better to specify the main.nf path
 
-let me show you what I mean:
+
 
 cd ebola_nextflow/test
 ./nextflow run -profile docker ../main.nf --threads 20 --genome ebola_ref.fasta --reads1 ebola_mut_reads1.fq --reads2 ebola_mut_reads2.fq --outdir OUTPUT_DIR
 
 main.nf is a file too. If you change directory, you have to change the path or always use the absolute path.
 
-there is a typo, sorry:
+
 
 ../nextflow run -profile docker ../main.nf --threads 20 --genome ebola_ref.fasta --reads1 ebola_mut_reads1.fq --reads2 ebola_mut_reads2.fq --outdir OUTPUT_DIR
 
 ./nextflow -> ../nextflow
 main.nf -> ../main.nf
 
-Just be careful with the path of nextflow and main.nf
 
-But don't move nextflow, because it generates hidden directories it needs. You can see them with ls -a
-
-That's why I've implemented "make clean"
-
-So the directory doesn't get "dirty"
 
 Download and decompress the new version
 cd ebola_nextflow
