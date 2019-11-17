@@ -1,0 +1,84 @@
+Nov-17 19:49:08.350 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Nov-17 19:49:08.426 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.01.0
+Nov-17 19:49:08.473 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [high_heisenberg] - revision: 12ec7a71e6
+Nov-17 19:49:08.486 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/james/Music/workflow/nextflow-variantcalling/nextflow.config
+Nov-17 19:49:08.487 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/james/Music/workflow/nextflow-variantcalling/nextflow.config
+Nov-17 19:49:08.516 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-17 19:49:08.875 [main] DEBUG nextflow.Session - Session uuid: 3772b043-a353-41a4-b12f-faa134bd0382
+Nov-17 19:49:08.875 [main] DEBUG nextflow.Session - Run name: high_heisenberg
+Nov-17 19:49:08.876 [main] DEBUG nextflow.Session - Executor pool size: 12
+Nov-17 19:49:08.900 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.01.0 build 5050
+  Modified: 22-01-2019 11:19 UTC (16:49 IDT)
+  System: Linux 5.0.0-36-generic
+  Runtime: Groovy 2.5.5 on OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 26369@james [127.0.1.1]
+  CPUs: 12 - Mem: 15.7 GB (1.4 GB) - Swap: 0 (0)
+Nov-17 19:49:08.955 [main] DEBUG nextflow.Session - Work-dir: /home/james/Music/workflow/nextflow-variantcalling/work [ext2/ext3]
+Nov-17 19:49:08.956 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/james/Music/workflow/nextflow-variantcalling/bin
+Nov-17 19:49:09.139 [main] DEBUG nextflow.Session - Session start invoked
+Nov-17 19:49:09.142 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Nov-17 19:49:09.142 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Nov-17 19:49:09.324 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-17 19:49:09.381 [main] INFO  nextflow.Nextflow - ========================================================================
+Ebola - Nextflow pipeline v0.0.2
+========================================================================
+Nov-17 19:49:09.384 [main] INFO  nextflow.Nextflow - Pipeline Name     : Ebola - Nextflow pipeline
+Pipeline Version  : 0.0.2
+Run Name          : high_heisenberg
+User              : james
+Config Profile    : standard
+Working Dir       : /home/james/Music/workflow/nextflow-variantcalling/work
+Genome            : /home/james/Music/workflow/nextflow-variantcalling/test/ebola_ref.fasta
+Reads 1           : /home/james/Music/workflow/nextflow-variantcalling/test/ebola_mut_reads1.fq
+Reads 2           : /home/james/Music/workflow/nextflow-variantcalling/test/ebola_mut_reads2.fq
+Output Dir        : /home/james/Music/workflow/nextflow-variantcalling/results
+Threads           : 4
+SA Index Nbases   : 6
+RGID              : 445_RG
+RGLB              : 445_LB_PAIRED
+RGPL              : ILLUMINA
+RGSM              : ebola
+RGPU              : NONE
+Nov-17 19:49:09.384 [main] INFO  nextflow.Nextflow - ========================================================================
+Nov-17 19:49:09.427 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Nov-17 19:49:09.427 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Nov-17 19:49:09.431 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Nov-17 19:49:09.434 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Nov-17 19:49:09.437 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=15.7 GB; capacity=12; pollInterval=100ms; dumpInterval=5m
+Nov-17 19:49:09.440 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Nov-17 19:49:09.440 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Nov-17 19:49:09.442 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Nov-17 19:49:09.459 [main] DEBUG nextflow.Session - >>> barrier register (process: genomePreparation)
+Nov-17 19:49:09.462 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > genomePreparation -- maxForks: 12
+Nov-17 19:49:09.494 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Nov-17 19:49:09.494 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Nov-17 19:49:09.495 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Nov-17 19:49:09.495 [main] DEBUG nextflow.Session - >>> barrier register (process: runStar)
+Nov-17 19:49:09.495 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runStar -- maxForks: 12
+Nov-17 19:49:09.503 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Nov-17 19:49:09.503 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Nov-17 19:49:09.503 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Nov-17 19:49:09.504 [main] DEBUG nextflow.Session - >>> barrier register (process: runGatk)
+Nov-17 19:49:09.504 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runGatk -- maxForks: 12
+Nov-17 19:49:09.507 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Nov-17 19:49:09.507 [main] DEBUG nextflow.Session - Session await
+Nov-17 19:49:09.593 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-17 19:49:09.598 [Task submitter] INFO  nextflow.Session - [0b/8ae6df] Submitted process > genomePreparation (1)
+Nov-17 19:49:11.195 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: genomePreparation (1); status: COMPLETED; exit: 0; error: -; workDir: /home/james/Music/workflow/nextflow-variantcalling/work/0b/8ae6df0b5d5eaa99cd43830258416e]
+Nov-17 19:49:11.203 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: genomePreparation)
+Nov-17 19:49:11.255 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-17 19:49:11.255 [Task submitter] INFO  nextflow.Session - [59/febfa1] Submitted process > runStar (1)
+Nov-17 19:49:16.228 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: runStar (1); status: COMPLETED; exit: 0; error: -; workDir: /home/james/Music/workflow/nextflow-variantcalling/work/59/febfa16068cf201d2561f210f13d61]
+Nov-17 19:49:16.229 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: runStar)
+Nov-17 19:49:16.254 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-17 19:49:16.254 [Task submitter] INFO  nextflow.Session - [cf/bcde02] Submitted process > runGatk
+Nov-17 19:49:34.722 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: runGatk; status: COMPLETED; exit: 0; error: -; workDir: /home/james/Music/workflow/nextflow-variantcalling/work/cf/bcde02b8ed27d4077d88f99e87bf24]
+Nov-17 19:49:34.731 [Actor Thread 2] DEBUG nextflow.Session - <<< barrier arrive (process: runGatk)
+Nov-17 19:49:34.731 [main] DEBUG nextflow.Session - Session await > all process finished
+Nov-17 19:49:34.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Nov-17 19:49:34.732 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-17 19:49:34.736 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=3; failedCount=0; ignoredCount=0; cachedCount=0; succeedDuration=24.9s; failedDuration=0ms; cachedDuration=0ms]
+Nov-17 19:49:34.741 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Nov-17 19:49:34.753 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
